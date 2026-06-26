@@ -638,6 +638,365 @@
   }
   .scribble-confirm.show{ opacity:1; }
 
+  /* ---- novel clippings section ---- */
+  .novels-eyebrow{
+    font-family:'Tajawal',sans-serif;
+    font-size:11px; letter-spacing:2.5px;
+    color:var(--gold-soft); margin-bottom:28px;
+  }
+  .novels-eyebrow::before, .novels-eyebrow::after{
+    content:""; display:inline-block;
+    width:14px; height:1px; background:var(--gold-soft);
+    vertical-align:middle; margin:0 8px;
+  }
+
+  /* shared clip base */
+  .novel-clip-wrap{ position:relative; max-width:300px; margin:0 auto; }
+  .novel-tape{
+    position:absolute; top:-10px;
+    width:52px; height:18px;
+    z-index:3;
+  }
+
+  /* ── 1. أني أتعفن رعباً ── horror style */
+  .clip-horror{
+    background:#0d0809;
+    padding:32px 22px 28px;
+    border:1px solid rgba(160,20,30,.5);
+    position:relative;
+    overflow:hidden;
+  }
+  .clip-horror::before{
+    content:"";
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(160,20,30,.04) 28px, rgba(160,20,30,.04) 29px);
+    pointer-events:none;
+  }
+  .clip-horror::after{
+    content:"";
+    position:absolute; bottom:0; left:0; right:0; height:3px;
+    background:linear-gradient(90deg, transparent, rgba(160,20,30,.7), transparent);
+  }
+  .horror-title{
+    font-family:'Aref Ruqaa',serif; font-size:13px;
+    color:rgba(160,20,30,.9); letter-spacing:2px; margin:0 0 18px 0;
+  }
+  .horror-text{
+    font-family:'Amiri',serif; font-size:15px; line-height:2.1;
+    color:rgba(220,200,200,.85); margin:0;
+    text-shadow:0 0 8px rgba(160,20,30,.3);
+  }
+  .horror-flicker{
+    display:inline-block;
+    animation:flicker 4s infinite;
+  }
+  @keyframes flicker{
+    0%,96%,100%{opacity:1;}
+    97%{opacity:.2;}
+    98%{opacity:.9;}
+    99%{opacity:.3;}
+  }
+
+  /* ── 2. رواية 005 ── secret file style */
+  .clip-file{
+    background:#e8e0ca;
+    padding:28px 22px 24px;
+    position:relative;
+  }
+  .clip-file::before{
+    content:"سري للغاية";
+    position:absolute; top:12px; left:12px;
+    font-family:'Tajawal',sans-serif; font-size:10px;
+    letter-spacing:2px; color:rgba(140,30,30,.5);
+    border:1px solid rgba(140,30,30,.4);
+    padding:2px 7px; transform:rotate(-8deg);
+  }
+  .clip-file::after{
+    content:"";
+    position:absolute; top:0; left:0; right:0; bottom:0;
+    background:repeating-linear-gradient(
+      0deg, transparent, transparent 23px,
+      rgba(58,42,28,.12) 23px, rgba(58,42,28,.12) 24px
+    );
+    pointer-events:none;
+  }
+  .file-ref{
+    font-family:'Tajawal',sans-serif; font-size:10px;
+    letter-spacing:2px; color:rgba(58,42,28,.45);
+    margin:0 0 16px 0; direction:ltr; text-align:left;
+  }
+  .file-text{
+    font-family:'Amiri',serif; font-size:14.5px; line-height:2;
+    color:var(--paper-ink); margin:0; position:relative; z-index:1;
+  }
+  .file-stamp{
+    margin-top:16px; text-align:left; direction:ltr;
+    font-family:'Tajawal',sans-serif; font-size:10px;
+    color:rgba(140,30,30,.6); letter-spacing:1px; position:relative; z-index:1;
+  }
+
+  /* ── 3. ستوكهولم ── handwritten letter style */
+  .clip-letter{
+    background:#f7f0e0;
+    padding:34px 26px 28px;
+    position:relative;
+    box-shadow:inset 0 0 40px rgba(140,90,30,.08);
+  }
+  .clip-letter::before{
+    content:"";
+    position:absolute; top:18px; left:18px; right:18px; bottom:18px;
+    border:1px solid rgba(140,90,30,.18);
+    pointer-events:none;
+  }
+  .letter-dear{
+    font-family:'Aref Ruqaa',serif; font-size:17px;
+    color:var(--wine); margin:0 0 14px 0;
+  }
+  .letter-text{
+    font-family:'Amiri',serif; font-style:italic;
+    font-size:15px; line-height:2.1; color:var(--paper-ink); margin:0;
+  }
+  .letter-sign{
+    font-family:'Aref Ruqaa',serif; font-size:15px;
+    color:var(--wine); text-align:left; direction:ltr;
+    margin-top:18px; opacity:.8;
+  }
+
+  /* ---- things I love about you ---- */
+  .love-eyebrow{
+    font-family:'Tajawal',sans-serif;
+    font-size:11px; letter-spacing:2.5px;
+    color:var(--gold-soft); margin-bottom:8px;
+  }
+  .love-eyebrow::before, .love-eyebrow::after{
+    content:""; display:inline-block;
+    width:14px; height:1px; background:var(--gold-soft);
+    vertical-align:middle; margin:0 8px;
+  }
+  .love-title{
+    font-family:'Aref Ruqaa', serif;
+    font-size:26px;
+    color:var(--ivory);
+    margin:0 0 28px 0;
+  }
+  .love-list{
+    width:100%;
+    max-width:360px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .love-item{
+    border:1px solid rgba(201,162,39,.35);
+    background:rgba(255,255,255,.03);
+    padding:16px 18px;
+    text-align:right;
+    transition:background .3s, border-color .3s;
+  }
+  .love-item.open{
+    background:rgba(201,162,39,.08);
+    border-color:var(--gold);
+  }
+  .love-trigger{
+    width:100%;
+    background:transparent;
+    border:none;
+    color:var(--gold-soft);
+    font-family:'Tajawal',sans-serif;
+    font-size:15px;
+    font-weight:500;
+    text-align:right;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0;
+  }
+  .love-trigger .chev{
+    transition:transform .3s;
+    opacity:.7;
+    font-size:13px;
+  }
+  .love-item.open .love-trigger .chev{ transform:rotate(180deg); }
+  .love-reveal{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:max-height .5s ease, opacity .5s ease, margin-top .5s ease;
+    font-family:'Amiri', serif;
+    font-style:italic;
+    font-size:14.5px;
+    line-height:1.95;
+    color:rgba(243,233,218,.85);
+    margin-top:0;
+  }
+  .love-item.open .love-reveal{
+    max-height:160px;
+    opacity:1;
+    margin-top:12px;
+  }
+
+  /* ---- 4. ليلة كيدراما (night scene → sunrise) ---- */
+  .kdrama-scene{
+    position:relative;
+    max-width:300px;
+    margin:0 auto;
+    padding:38px 24px 32px;
+    border-radius:4px;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 75% 18%, rgba(230,225,200,.18), transparent 45%),
+      linear-gradient(160deg, #0a0a18, #161028 55%, #1c1430);
+    border:1px solid rgba(201,162,39,.35);
+    transition:background 2.4s ease;
+    min-height:230px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+  .kdrama-scene.sunrise{
+    background:
+      radial-gradient(circle at 75% 25%, rgba(255,210,140,.85), transparent 55%),
+      linear-gradient(160deg, #6b2d3a, #b9612f 55%, #e8a755);
+  }
+  .kdrama-stars{
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 20% 25%, rgba(255,255,255,.8), transparent),
+      radial-gradient(1.5px 1.5px at 70% 15%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,.6), transparent),
+      radial-gradient(1.5px 1.5px at 85% 70%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1px 1px at 55% 40%, rgba(255,255,255,.5), transparent),
+      radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,.6), transparent);
+    opacity:1;
+    transition:opacity 1.8s ease;
+  }
+  .kdrama-scene.sunrise .kdrama-stars{ opacity:0; }
+  .kdrama-title{
+    font-family:'Aref Ruqaa', serif;
+    font-size:14px;
+    letter-spacing:1px;
+    color:rgba(243,233,218,.55);
+    margin:0 0 18px 0;
+    position:relative; z-index:1;
+  }
+  .kdrama-moon{
+    font-size:46px;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    line-height:1;
+    filter:drop-shadow(0 0 14px rgba(243,233,218,.5));
+    transition:transform .6s ease, opacity .6s ease;
+    position:relative; z-index:1;
+  }
+  .kdrama-scene.sunrise .kdrama-moon{
+    transform:rotate(180deg) scale(.8);
+    opacity:0;
+    pointer-events:none;
+  }
+  .kdrama-hint{
+    font-size:11px;
+    color:rgba(243,233,218,.4);
+    margin:10px 0 0 0;
+    letter-spacing:.5px;
+    position:relative; z-index:1;
+    transition:opacity .8s ease;
+  }
+  .kdrama-scene.sunrise .kdrama-hint{ opacity:0; }
+  .kdrama-quote{
+    font-family:'Aref Ruqaa', serif;
+    font-size:17px;
+    color:#fff8ec;
+    text-align:center;
+    max-width:240px;
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity 1.4s ease .4s, transform 1.4s ease .4s;
+    position:relative; z-index:1;
+    margin-top:18px;
+    text-shadow:0 1px 8px rgba(0,0,0,.35);
+  }
+  .kdrama-scene.sunrise .kdrama-quote{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* ---- 5. برطمان الحب (Jar of Love) ---- */
+  .jar-wrap{
+    max-width:300px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .jar-jar{
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    padding:0;
+    line-height:1;
+    transition:transform .35s ease;
+  }
+  .jar-jar:hover{ transform:scale(1.06); }
+  .jar-emoji{
+    font-size:74px;
+    display:inline-block;
+    filter:drop-shadow(0 8px 18px rgba(201,162,39,.25));
+    transition:transform .35s ease;
+  }
+  .jar-jar.opening .jar-emoji{
+    animation:jarShake .35s ease;
+  }
+  @keyframes jarShake{
+    0%,100%{ transform:rotate(0deg); }
+    25%{ transform:rotate(-8deg); }
+    75%{ transform:rotate(8deg); }
+  }
+  .jar-jar.bounce .jar-emoji{
+    animation:jarBounce .5s ease;
+  }
+  @keyframes jarBounce{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-8px); }
+  }
+  .jar-hint{
+    font-size:12.5px;
+    color:rgba(243,233,218,.55);
+    margin:16px 0 0 0;
+    letter-spacing:.3px;
+    line-height:1.8;
+  }
+  .jar-note{
+    margin-top:22px;
+    max-height:0;
+    opacity:0;
+    overflow:hidden;
+    transition:max-height .6s ease, opacity .6s ease, margin-top .6s ease;
+  }
+  .jar-note.show{
+    max-height:220px;
+    opacity:1;
+  }
+  .jar-note-inner{
+    background:var(--paper);
+    color:var(--paper-ink);
+    padding:22px 18px;
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.4));
+    clip-path:polygon(
+      0% 4%, 8% 0%, 16% 5%, 24% 1%, 32% 5%, 40% 0%, 48% 5%, 56% 1%, 64% 5%, 72% 0%, 80% 5%, 88% 1%, 96% 5%, 100% 1%,
+      100% 98%, 92% 100%, 84% 96%, 76% 100%, 68% 96%, 60% 100%, 52% 96%, 44% 100%, 36% 96%, 28% 100%, 20% 96%, 12% 100%, 4% 96%, 0% 99%
+    );
+    transform:rotate(-1.5deg);
+  }
+  .jar-note-text{
+    font-family:'Amiri', serif;
+    font-style:italic;
+    font-size:15.5px;
+    line-height:2;
+    margin:0;
+  }
+
   /* ---- music section ---- */
   .spotify-wrap{
     width:100%;
@@ -945,6 +1304,44 @@
     </div>
   </div>
 
+  <!-- THINGS I LOVE ABOUT YOU -->
+  <div class="s-block">
+    <p class="love-eyebrow reveal">لمسة خاصة</p>
+    <p class="love-title reveal">الأشياء التي أحبها فيك 🌸</p>
+    <div class="love-list reveal">
+      <div class="love-item">
+        <button class="love-trigger" onclick="toggleLove(this)">
+          <span>✨ ضحكتك</span><span class="chev">⌄</span>
+        </button>
+        <p class="love-reveal">ضحكتك التي تجعلني أنسى كل شيء آخر، وتحوّل أصغر اللحظات إلى أجملها.</p>
+      </div>
+      <div class="love-item">
+        <button class="love-trigger" onclick="toggleLove(this)">
+          <span>✨ طريقتك في الكلام</span><span class="chev">⌄</span>
+        </button>
+        <p class="love-reveal">الطريقة التي تتكلمين بها، حتى أبسط الجمل تصبح عندي شيئًا أحتفظ به.</p>
+      </div>
+      <div class="love-item">
+        <button class="love-trigger" onclick="toggleLove(this)">
+          <span>✨ اهتمامك بالكتب</span><span class="chev">⌄</span>
+        </button>
+        <p class="love-reveal">حبكِ للكتب يجعلني أراكِ كعالمٍ كامل بداخله آلاف القصص، وأشعر أنني محظوظ لأنني جزء منها.</p>
+      </div>
+      <div class="love-item">
+        <button class="love-trigger" onclick="toggleLove(this)">
+          <span>✨ كيف تجعلين يومي أخف</span><span class="chev">⌄</span>
+        </button>
+        <p class="love-reveal">بمجرد أن أسمع صوتك، يخفّ كل ثقل اليوم وكأن شيئًا لم يكن.</p>
+      </div>
+      <div class="love-item">
+        <button class="love-trigger" onclick="toggleLove(this)">
+          <span>✨ كيف أصبحتِ أكثر شخص أفكر فيه</span><span class="chev">⌄</span>
+        </button>
+        <p class="love-reveal">لم أخطط لذلك، لكنكِ أصبحتِ الفكرة التي تعود إليّ في كل لحظة هادئة.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- VOICE NOTE -->
   <div class="s-block">
     <div class="reveal voice-card">
@@ -968,6 +1365,86 @@
       <br>
       <button class="scribble-btn" onclick="sendScribble()">أرسلي ✉️</button>
       <p class="scribble-confirm" id="scribbleConfirm">وصلتني ✨ شكرًا يا لينا</p>
+    </div>
+  </div>
+
+  <!-- ══ NOVELS SECTION ══ -->
+  <div class="s-block">
+    <p class="novels-eyebrow reveal">رواياتها المفضّلة</p>
+  </div>
+
+  <!-- رواية 1: أني أتعفن رعباً -->
+  <div class="s-block">
+    <div class="novel-clip-wrap reveal" style="transform:rotate(-1.5deg)">
+      <div class="novel-tape" style="right:30%; background:rgba(100,10,15,.55); transform:rotate(-4deg);"></div>
+      <div class="clip-horror">
+        <p class="horror-title">◈ أني أتعفن رعباً ◈</p>
+        <p class="horror-text">
+           لقد وعدوا بأن الأحلام يمكن أن تتحقق ! .<br>
+          <span class="horror-flicker">تُلكن نسوا أن يذكروا أن الكوابيس تتحقق أحياناً"</span><br>
+          وأنتِ قرأتِها ولم تخافي 🖤
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- رواية 2: 005 -->
+  <div class="s-block">
+    <div class="novel-clip-wrap reveal" style="transform:rotate(2deg)">
+      <div class="novel-tape" style="left:30%; background:rgba(58,42,28,.4); transform:rotate(3deg);"></div>
+      <div class="clip-file">
+        <p class="file-ref">FILE // 005 — CLASSIFIED</p>
+        <p class="file-text">
+          ب ❞ مهما حزنت وانكسرت، أو تخبطت من الألم أو جُرِحت مشاعرك!<br>
+          إفتذكر أن العالم لن يتوقف عزاءً لك
+        </p>
+        <p class="file-stamp">STATUS: READ ✓ — BY: LINA</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- رواية 3: ستوكهولم -->
+  <div class="s-block">
+    <div class="novel-clip-wrap reveal" style="transform:rotate(-1deg)">
+      <div class="novel-tape" style="right:38%; background:rgba(180,140,60,.4); transform:rotate(-5deg);"></div>
+      <div class="clip-letter">
+        <p class="letter-dear">إلى من تقرأ ستوكهولم...</p>
+        <p class="letter-text">
+          ه يقول الفلاسفة: لا تبحث عن الحب فهو سيبحث عنك.. ويقولون أيضًا: قَعْ في حب شخصٍ يكون ملاذك الآمن، ومغامرتك اللانهائية…!
+        </p>
+        <p class="letter-sign">— Lina 🤍</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- رواية 4: ليلة كيدراما -->
+  <div class="s-block">
+    <div class="novel-clip-wrap reveal" style="transform:rotate(1deg)">
+      <div class="novel-tape" style="left:36%; background:rgba(120,90,200,.4); transform:rotate(4deg);"></div>
+      <div class="kdrama-scene" id="kdramaScene">
+        <div class="kdrama-stars"></div>
+        <p class="kdrama-title">ليلة كيدراما 🌙</p>
+        <button class="kdrama-moon" onclick="kdramaSunrise(this)">🌙</button>
+        <p class="kdrama-hint">اضغطي على القمر...</p>
+        <p class="kdrama-quote">"حتى الليل يصبح جميلًا عندما تكونين فيه."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- رواية 5: برطمان الحب -->
+  <div class="s-block">
+    <p class="love-eyebrow reveal">٣٦٥ يومًا من الحب</p>
+    <p class="love-title reveal">❤️ برطمان الحب</p>
+    <div class="jar-wrap reveal">
+      <button class="jar-jar" id="jarBtn" onclick="openJar()">
+        <span class="jar-emoji">🫙</span>
+      </button>
+      <p class="jar-hint" id="jarHint">فيه ٣٦٥ ورقة... كل يوم تفتحين واحدة فقط 🤍</p>
+      <div class="jar-note" id="jarNote">
+        <div class="jar-note-inner">
+          <p class="jar-note-text" id="jarNoteText"></p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1285,6 +1762,121 @@
   }
 
   setupMedia();
+
+  // ──────── things I love about you (click-to-reveal) ──
+  function toggleLove(btn){
+    const item = btn.closest('.love-item');
+    item.classList.toggle('open');
+  }
+
+  // ──────── kdrama night → sunrise ─────────────────────
+  function kdramaSunrise(btn){
+    const scene = btn.closest('.kdrama-scene');
+    scene.classList.add('sunrise');
+  }
+
+  // ──────── jar of love ─────────────────────────────────
+  const jarNotes = [
+    'أحب ضحكتك.',
+    'أتمنى يكون يومك جميلًا.',
+    'لا تنسي أنك جميلة.',
+    'ابتسامتك تكفي لإصلاح يومي كله.',
+    'أنتِ أجمل شيء حدث لي هذا العام.',
+    'صوتك أول شيء أحب أن أسمعه.',
+    'لو خيّروني بين كل الأيام، لاخترتُ يومًا معكِ.',
+    'كوني فخورة بنفسكِ كما أنا فخور بكِ.',
+    'عيناكِ تحملان حكاية أحبها كثيرًا.',
+    'شكرًا لأنكِ أنتِ.',
+    'يومك سيكون جميلًا، لأنكِ أنتِ فيه.',
+    'أنتِ أصدق شيء في حياتي.',
+    'أفكاركِ تستحق أن تُسمع، فلا تخجلي منها.',
+    'كل تفصيلة فيكِ تستحق الانتباه.',
+    'أنا ممتن لوجودكِ، كل يوم من جديد.',
+    'لو الأيام كانت كتابًا، أنتِ أجمل فصل فيه.',
+    'خذي نفسًا عميقًا، أنتِ بخير وستكونين أفضل.',
+    'لا تقللي من نفسكِ أبدًا، أنتِ كافية.',
+    'حضورك يُغيّر لون الغرفة.',
+    'أحب الطريقة التي ترين بها العالم.',
+    'أنتِ سبب كافٍ لأبتسم اليوم.',
+    'كل خطوة تخطينها أنا فخور بها.',
+    'لا تستعجلي، الأشياء الجميلة تأخذ وقتها وأنتِ منها.',
+    'أنتِ أقوى مما تتخيلين.',
+    'ثقتك بنفسكِ تُلهمني.',
+    'أحب فضولكِ تجاه كل شيء صغير.',
+    'حتى يومك العادي، يصبح خاصًا لأنكِ فيه.',
+    'أرسل لكِ كل الحب اليوم، احتفظي به.',
+    'أنتِ تستحقين كل شيء جميل.',
+    'لو سألوني عن السعادة، سأقول اسمكِ.',
+    'لا تشكّي في قيمتكِ يومًا.',
+    'أحب أن أراكِ تكبرين وتتطورين.',
+    'حتى صمتكِ له معنى أحبه.',
+    'كل يوم معكِ هو يوم أتعلم فيه شيئًا جديدًا.',
+    'لا تنسي أن تضحكي على نفسكِ أحيانًا، فهذا جميل أيضًا.',
+    'أنتِ مصدر طمأنة كبير لي.',
+    'لو كان للحب شكل، لكان شكلكِ.',
+    'اعتني بنفسكِ اليوم، كما تعتنين بالآخرين.',
+    'أنتِ تستحقين أن تُحَبّي بقدر ما تُحِبّين.',
+    'شكرًا لأنكِ تجعلين كل شيء أسهل.'
+  ];
+
+  function getJarToday(){
+    const d = new Date();
+    return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+  }
+
+  function showJarNote(text, alreadyOpened){
+    const noteBox = document.getElementById('jarNote');
+    const noteText = document.getElementById('jarNoteText');
+    const hint = document.getElementById('jarHint');
+    if(!noteBox || !noteText || !hint) return;
+    noteText.textContent = text;
+    noteBox.classList.add('show');
+    hint.textContent = alreadyOpened
+      ? 'فتحتِ ورقة اليوم بالفعل... عودي غدًا لورقة جديدة 🤍'
+      : 'ورقة اليوم 🤍 عودي غدًا لورقة جديدة';
+  }
+
+  function openJar(){
+    const today = getJarToday();
+    const lastDate = localStorage.getItem('jar_date');
+    const jarBtn = document.getElementById('jarBtn');
+
+    if(lastDate === today){
+      const savedNote = localStorage.getItem('jar_note') || jarNotes[0];
+      showJarNote(savedNote, true);
+      if(jarBtn){
+        jarBtn.classList.add('bounce');
+        setTimeout(()=>jarBtn.classList.remove('bounce'), 500);
+      }
+      return;
+    }
+
+    let used = [];
+    try{ used = JSON.parse(localStorage.getItem('jar_used') || '[]'); }catch(e){ used = []; }
+    if(used.length >= jarNotes.length) used = [];
+    let idx;
+    do{ idx = Math.floor(Math.random()*jarNotes.length); } while(used.includes(idx));
+    used.push(idx);
+
+    localStorage.setItem('jar_date', today);
+    localStorage.setItem('jar_note', jarNotes[idx]);
+    localStorage.setItem('jar_used', JSON.stringify(used));
+
+    if(jarBtn){
+      jarBtn.classList.add('opening');
+      setTimeout(()=>jarBtn.classList.remove('opening'), 350);
+    }
+    setTimeout(()=>showJarNote(jarNotes[idx], false), 200);
+  }
+
+  // if a note was already opened today, show it without waiting for a click
+  (function initJar(){
+    const today = getJarToday();
+    if(localStorage.getItem('jar_date') === today){
+      const savedNote = localStorage.getItem('jar_note');
+      if(savedNote) showJarNote(savedNote, true);
+    }
+  })();
 </script>
 
 </body>
