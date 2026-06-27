@@ -9,15 +9,25 @@
 <script src="https://open.spotify.com/intl-fr/track/4jiOgEp2ZPjzoUF5DxaOjG?si=1dc31d6f11c14308" async></script>
 <style>
   :root{
-    --ink:#0e0b12;
-    --wine:#5c1a2b;
-    --wine-bright:#7d2438;
-    --gold:#c9a227;
-    --gold-soft:#e6c965;
-    --ivory:#f3e9da;
-    --rose:#9c5264;
-    --paper:#ece1c3;
-    --paper-ink:#3a2a1c;
+    --ink:#1b0f17;
+    --wine:#7a2342;
+    --wine-bright:#9c2f55;
+    --gold:#8e2a4d;
+    --gold-soft:#c25f82;
+    --ivory:#f7e9ee;
+    --rose:#d68fae;
+    --paper:#f8e7ec;
+    --paper-ink:#5a2438;
+
+    --ink-rgb:27,15,23;
+    --wine-rgb:122,35,66;
+    --wine-bright-rgb:156,47,85;
+    --gold-rgb:142,42,77;
+    --gold-soft-rgb:194,95,130;
+    --ivory-rgb:247,233,238;
+    --rose-rgb:214,143,174;
+    --paper-rgb:248,231,236;
+    --paper-ink-rgb:90,36,56;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;height:100%;}
@@ -84,14 +94,14 @@
     text-align:center;
     font-family:'Aref Ruqaa', serif;
     font-size:clamp(14px,4vw,18px);
-    color:rgba(243,233,218,0);
+    color:rgba(var(--ivory-rgb),0);
     letter-spacing:2px;
     animation:eyesTextIn 2s ease forwards;
     animation-delay:1.6s;
   }
   @keyframes eyesTextIn{
-    0%{color:rgba(243,233,218,0);}
-    100%{color:rgba(243,233,218,0.75);}
+    0%{color:rgba(var(--ivory-rgb),0);}
+    100%{color:rgba(var(--ivory-rgb),0.75);}
   }
 
   /* ---- eyes novel insert (between clippings) ---- */
@@ -105,15 +115,15 @@
     content:"";
     display:block;
     height:1px;
-    background:linear-gradient(90deg, transparent, rgba(201,162,39,.5), transparent);
+    background:linear-gradient(90deg, transparent, rgba(var(--gold-rgb),.5), transparent);
     margin:0 auto 22px;
     width:80%;
   }
   .eyes-novel::after{ margin:22px auto 0; }
   .eyes-novel img{
     width:100%;
-    border-top:1px solid rgba(201,162,39,.3);
-    border-bottom:1px solid rgba(201,162,39,.3);
+    border-top:1px solid rgba(var(--gold-rgb),.3);
+    border-bottom:1px solid rgba(var(--gold-rgb),.3);
     filter:sepia(.25) contrast(1.1) brightness(.92);
     display:block;
   }
@@ -122,7 +132,7 @@
     font-style:italic;
     font-size:15px;
     line-height:2;
-    color:rgba(243,233,218,.85);
+    color:rgba(var(--ivory-rgb),.85);
     margin-top:18px;
   }
 
@@ -134,32 +144,32 @@
     opacity:0;
     transition:opacity 2.5s ease;
     background:
-      radial-gradient(ellipse 80% 60% at 20% 30%, #3b1520, transparent 65%),
-      radial-gradient(ellipse 70% 55% at 80% 70%, #1a0f05, transparent 65%),
-      radial-gradient(ellipse 60% 50% at 50% 50%, #0e0b12, transparent 70%);
+      radial-gradient(ellipse 80% 60% at 20% 30%, #4a1c30, transparent 65%),
+      radial-gradient(ellipse 70% 55% at 80% 70%, #2a1320, transparent 65%),
+      radial-gradient(ellipse 60% 50% at 50% 50%, var(--ink), transparent 70%);
     animation:warmShift 22s ease-in-out infinite alternate;
   }
   @keyframes warmShift{
     0%  { background:
-            radial-gradient(ellipse 80% 60% at 20% 30%, rgba(92,26,43,.85), transparent 65%),
-            radial-gradient(ellipse 60% 55% at 75% 75%, rgba(140,80,30,.35), transparent 65%),
-            radial-gradient(ellipse 90% 70% at 50% 50%, #0e0b12, transparent 80%); }
+            radial-gradient(ellipse 80% 60% at 20% 30%, rgba(var(--wine-rgb),.85), transparent 65%),
+            radial-gradient(ellipse 60% 55% at 75% 75%, rgba(var(--gold-rgb),.32), transparent 65%),
+            radial-gradient(ellipse 90% 70% at 50% 50%, var(--ink), transparent 80%); }
     25% { background:
-            radial-gradient(ellipse 70% 65% at 70% 20%, rgba(180,110,45,.4), transparent 60%),
-            radial-gradient(ellipse 80% 55% at 25% 80%, rgba(110,35,55,.75), transparent 65%),
-            radial-gradient(ellipse 90% 70% at 50% 50%, #0e0b12, transparent 80%); }
+            radial-gradient(ellipse 70% 65% at 70% 20%, rgba(var(--gold-rgb),.38), transparent 60%),
+            radial-gradient(ellipse 80% 55% at 25% 80%, rgba(var(--wine-bright-rgb),.7), transparent 65%),
+            radial-gradient(ellipse 90% 70% at 50% 50%, var(--ink), transparent 80%); }
     50% { background:
-            radial-gradient(ellipse 75% 60% at 50% 15%, rgba(155,80,35,.45), transparent 60%),
-            radial-gradient(ellipse 70% 65% at 50% 85%, rgba(92,26,43,.7), transparent 65%),
-            radial-gradient(ellipse 90% 70% at 50% 50%, #0e0b12, transparent 80%); }
+            radial-gradient(ellipse 75% 60% at 50% 15%, rgba(var(--rose-rgb),.4), transparent 60%),
+            radial-gradient(ellipse 70% 65% at 50% 85%, rgba(var(--wine-rgb),.7), transparent 65%),
+            radial-gradient(ellipse 90% 70% at 50% 50%, var(--ink), transparent 80%); }
     75% { background:
-            radial-gradient(ellipse 65% 70% at 15% 60%, rgba(160,90,40,.38), transparent 60%),
-            radial-gradient(ellipse 75% 55% at 85% 30%, rgba(100,30,50,.72), transparent 65%),
-            radial-gradient(ellipse 90% 70% at 50% 50%, #0e0b12, transparent 80%); }
+            radial-gradient(ellipse 65% 70% at 15% 60%, rgba(var(--gold-rgb),.35), transparent 60%),
+            radial-gradient(ellipse 75% 55% at 85% 30%, rgba(var(--wine-bright-rgb),.65), transparent 65%),
+            radial-gradient(ellipse 90% 70% at 50% 50%, var(--ink), transparent 80%); }
     100%{ background:
-            radial-gradient(ellipse 80% 60% at 30% 25%, rgba(92,26,43,.8), transparent 65%),
-            radial-gradient(ellipse 65% 60% at 70% 80%, rgba(145,75,30,.38), transparent 60%),
-            radial-gradient(ellipse 90% 70% at 50% 50%, #0e0b12, transparent 80%); }
+            radial-gradient(ellipse 80% 60% at 30% 25%, rgba(var(--wine-rgb),.8), transparent 65%),
+            radial-gradient(ellipse 65% 60% at 70% 80%, rgba(var(--rose-rgb),.35), transparent 60%),
+            radial-gradient(ellipse 90% 70% at 50% 50%, var(--ink), transparent 80%); }
   }
 
   /* ---- fixed gate screens (intro / lock) ---- */
@@ -186,8 +196,8 @@
     position:absolute;
     inset:0;
     background:
-      radial-gradient(ellipse 60% 45% at 50% 20%, rgba(125,36,56,.55), transparent 70%),
-      radial-gradient(ellipse 50% 40% at 80% 85%, rgba(201,162,39,.12), transparent 70%);
+      radial-gradient(ellipse 60% 45% at 50% 20%, rgba(var(--wine-bright-rgb),.55), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 80% 85%, rgba(var(--gold-rgb),.16), transparent 70%);
     z-index:0;
   }
 
@@ -200,18 +210,27 @@
   .particle{
     position:absolute;
     bottom:-10px;
-    width:5px;
-    height:5px;
-    border-radius:50%;
+    width:7px;
+    height:7px;
+    border-radius:50% 50% 50% 0;
     background:var(--gold-soft);
+    box-shadow:0 0 6px rgba(var(--gold-rgb),.5);
     opacity:0;
     animation:rise linear infinite;
   }
   @keyframes rise{
-    0%{transform:translateY(0) translateX(0); opacity:0;}
+    0%{transform:translateY(0) translateX(0) rotate(0deg); opacity:0;}
     10%{opacity:.85;}
-    90%{opacity:.4;}
-    100%{transform:translateY(-100vh) translateX(var(--drift,20px)); opacity:0;}
+    90%{opacity:.45;}
+    100%{transform:translateY(-100vh) translateX(var(--drift,20px)) rotate(220deg); opacity:0;}
+  }
+  .particle-flower{
+    width:auto; height:auto;
+    background:none;
+    box-shadow:none;
+    border-radius:0;
+    filter:drop-shadow(0 0 4px rgba(var(--gold-rgb),.5));
+    line-height:1;
   }
 
   .content{
@@ -246,7 +265,7 @@
     line-height:1.15;
     color:var(--ivory);
     margin:0 0 6px 0;
-    text-shadow:0 0 30px rgba(201,162,39,.25);
+    text-shadow:0 0 30px rgba(var(--gold-rgb),.25);
   }
   .subtitle{
     font-family:'Aref Ruqaa', serif;
@@ -260,7 +279,7 @@
     font-style:italic;
     font-size:15px;
     line-height:1.9;
-    color:rgba(243,233,218,.75);
+    color:rgba(var(--ivory-rgb),.75);
     margin:0 0 36px 0;
   }
 
@@ -271,33 +290,36 @@
     color:var(--gold-soft);
     background:transparent;
     border:1px solid var(--gold);
-    padding:14px 36px;
-    border-radius:2px;
+    padding:14px 38px;
+    border-radius:30px;
     letter-spacing:1px;
     cursor:pointer;
     transition:all .35s ease;
   }
   .btn:hover, .btn:focus-visible{
-    background:rgba(201,162,39,.12);
-    box-shadow:0 0 24px rgba(201,162,39,.25);
+    background:rgba(var(--gold-rgb),.15);
+    box-shadow:0 0 26px rgba(var(--gold-rgb),.35);
     outline:none;
   }
 
   /* ---- lock screen ---- */
   .lock-frame{
-    border:1px solid rgba(201,162,39,.4);
+    border:1px solid rgba(var(--gold-rgb),.4);
+    border-radius:22px;
     padding:42px 28px;
     position:relative;
+    background:rgba(var(--gold-rgb),.04);
+    box-shadow:0 0 50px rgba(var(--gold-rgb),.12), inset 0 0 30px rgba(var(--gold-rgb),.05);
   }
-  .lock-frame::before, .lock-frame::after{
-    content:"";
+  .lock-frame::before{
+    content:"🌸";
     position:absolute;
-    width:14px;
-    height:14px;
-    border:1px solid var(--gold);
+    top:-16px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:20px;
+    filter:drop-shadow(0 0 10px rgba(var(--gold-rgb),.5));
   }
-  .lock-frame::before{ top:-1px; right:-1px; border-bottom:none; border-left:none; }
-  .lock-frame::after{ bottom:-1px; left:-1px; border-top:none; border-right:none; }
 
   .heading-md{
     font-family:'Aref Ruqaa', serif;
@@ -307,7 +329,7 @@
   }
   .sub-sm{
     font-size:13px;
-    color:rgba(243,233,218,.55);
+    color:rgba(var(--ivory-rgb),.55);
     margin:0 0 30px 0;
   }
   .code-row{
@@ -317,21 +339,22 @@
     margin-bottom:26px;
   }
   .code-box{
-    width:46px;
-    height:56px;
-    background:rgba(255,255,255,.03);
-    border:none;
-    border-bottom:2px solid var(--gold);
+    width:48px;
+    height:58px;
+    background:rgba(var(--gold-rgb),.06);
+    border:1px solid rgba(var(--gold-rgb),.35);
+    border-radius:14px;
     color:var(--ivory);
     font-size:24px;
     text-align:center;
     font-family:'Tajawal',sans-serif;
     outline:none;
-    transition:border-color .25s;
+    transition:border-color .25s, box-shadow .25s;
   }
   .code-box:focus{
     border-color:var(--gold-soft);
-    background:rgba(201,162,39,.08);
+    background:rgba(var(--gold-rgb),.12);
+    box-shadow:0 0 16px rgba(var(--gold-rgb),.3);
   }
   .code-row.shake{ animation:shake .45s; }
   @keyframes shake{
@@ -350,6 +373,66 @@
     transition:opacity .3s;
   }
   .error-msg.show{ opacity:1; }
+
+  /* ---- بخصوص اليوم (comfort card) ---- */
+  .today-card{
+    max-width:320px;
+    margin:0 auto;
+    text-align:center;
+    background:rgba(var(--gold-rgb),.07);
+    border:1px solid rgba(var(--gold-rgb),.35);
+    border-radius:18px;
+    padding:28px 22px;
+    box-shadow:0 0 30px rgba(var(--gold-rgb),.12);
+    transition:box-shadow .4s ease;
+  }
+  .today-icon{ font-size:30px; margin:0 0 12px 0; }
+  .today-title{
+    font-family:'Aref Ruqaa', serif;
+    font-size:20px;
+    color:var(--ivory);
+    margin:0 0 14px 0;
+  }
+  .today-text{
+    font-family:'Amiri', serif;
+    font-style:italic;
+    font-size:14.5px;
+    line-height:2.05;
+    color:rgba(var(--ivory-rgb),.85);
+    margin:0;
+  }
+  .today-btn{
+    margin-top:18px;
+    font-family:'Tajawal',sans-serif;
+    font-size:13px;
+    color:var(--gold-soft);
+    background:transparent;
+    border:1px solid var(--gold);
+    border-radius:24px;
+    padding:10px 26px;
+    cursor:pointer;
+    letter-spacing:.5px;
+    transition:all .3s;
+  }
+  .today-btn:hover{ background:rgba(var(--gold-rgb),.18); box-shadow:0 0 18px rgba(var(--gold-rgb),.3); }
+  .today-extra{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    margin-top:0;
+    transition:max-height .6s ease, opacity .6s ease, margin-top .6s ease;
+    font-family:'Amiri', serif;
+    font-style:italic;
+    font-size:14.5px;
+    line-height:2.05;
+    color:var(--gold-soft);
+  }
+  .today-extra.show{ max-height:160px; opacity:1; margin-top:16px; }
+  .today-card.pulse{ animation:todayPulse .6s ease; }
+  @keyframes todayPulse{
+    0%,100%{ box-shadow:0 0 30px rgba(var(--gold-rgb),.12); }
+    50%{ box-shadow:0 0 46px rgba(var(--gold-rgb),.4); }
+  }
 
   /* ---- scrolling story (after unlock) ---- */
   .story{
@@ -385,7 +468,7 @@
     margin-top:28px;
     font-size:11px;
     letter-spacing:2px;
-    color:rgba(243,233,218,.45);
+    color:rgba(var(--ivory-rgb),.45);
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -406,7 +489,7 @@
     font-style:italic;
     font-size:16px;
     line-height:2;
-    color:rgba(243,233,218,.9);
+    color:rgba(var(--ivory-rgb),.9);
     max-width:440px;
   }
   .lesson-tag{
@@ -438,7 +521,7 @@
     right:34%;
     width:56px;
     height:20px;
-    background:rgba(201,162,39,.45);
+    background:rgba(var(--gold-rgb),.45);
     box-shadow:0 2px 6px rgba(0,0,0,.3);
     transform:rotate(-5deg);
     z-index:3;
@@ -505,9 +588,9 @@
     width:100%;
     aspect-ratio:1/1;
     background:
-      repeating-linear-gradient(135deg, rgba(92,26,43,.06) 0 2px, transparent 2px 14px),
+      repeating-linear-gradient(135deg, rgba(var(--wine-rgb),.06) 0 2px, transparent 2px 14px),
       linear-gradient(160deg, #e7dcc4, #d8c9a3);
-    border:1px dashed rgba(92,26,43,.4);
+    border:1px dashed rgba(var(--wine-rgb),.4);
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -525,7 +608,7 @@
     font-family:'Tajawal',sans-serif;
     font-size:11px;
     letter-spacing:1px;
-    color:rgba(58,42,28,.55);
+    color:rgba(var(--paper-ink-rgb),.55);
   }
   .polaroid-caption{
     font-family:'Aref Ruqaa', serif;
@@ -536,21 +619,15 @@
 
   /* ---- voice note ---- */
   .voice-card{
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(201,162,39,.35);
+    background:rgba(var(--gold-rgb),.05);
+    border:1px solid rgba(var(--gold-rgb),.35);
+    border-radius:20px;
     padding:28px 24px;
     max-width:320px;
     margin:0 auto;
     position:relative;
+    box-shadow:0 0 40px rgba(var(--gold-rgb),.1);
   }
-  .voice-card::before, .voice-card::after{
-    content:"";
-    position:absolute;
-    width:12px; height:12px;
-    border:1px solid var(--gold);
-  }
-  .voice-card::before{ top:-1px; right:-1px; border-bottom:none; border-left:none; }
-  .voice-card::after{ bottom:-1px; left:-1px; border-top:none; border-right:none; }
   .voice-icon{ font-size:28px; margin-bottom:10px; }
   .voice-title{
     font-family:'Aref Ruqaa', serif;
@@ -560,7 +637,7 @@
   }
   .voice-hint{
     font-size:12px;
-    color:rgba(243,233,218,.45);
+    color:rgba(var(--ivory-rgb),.45);
     margin:0 0 18px 0;
     letter-spacing:.5px;
   }
@@ -571,7 +648,7 @@
   }
   .voice-placeholder{
     font-size:12px;
-    color:rgba(243,233,218,.35);
+    color:rgba(var(--ivory-rgb),.35);
     font-style:italic;
     padding:14px 0;
     font-family:'Amiri',serif;
@@ -591,29 +668,28 @@
   }
   .scribble-sub{
     font-size:12px;
-    color:rgba(243,233,218,.45);
+    color:rgba(var(--ivory-rgb),.45);
     margin:0 0 18px 0;
     letter-spacing:.5px;
   }
   .scribble-box{
     width:100%;
     min-height:110px;
-    background:rgba(255,255,255,.04);
-    border:none;
-    border-bottom:1px solid var(--gold);
-    border-right:1px solid rgba(201,162,39,.25);
+    background:rgba(var(--gold-rgb),.05);
+    border:1px solid rgba(var(--gold-rgb),.3);
+    border-radius:16px;
     color:var(--ivory);
     font-family:'Amiri',serif;
     font-style:italic;
     font-size:15px;
     line-height:1.9;
-    padding:14px;
+    padding:16px;
     resize:none;
     outline:none;
     direction:rtl;
-    transition:background .25s;
+    transition:background .25s, border-color .25s;
   }
-  .scribble-box:focus{ background:rgba(201,162,39,.06); }
+  .scribble-box:focus{ background:rgba(var(--gold-rgb),.09); border-color:var(--gold-soft); }
   .scribble-btn{
     margin-top:14px;
     font-family:'Tajawal',sans-serif;
@@ -621,12 +697,13 @@
     color:var(--gold-soft);
     background:transparent;
     border:1px solid var(--gold);
+    border-radius:24px;
     padding:10px 28px;
     cursor:pointer;
     letter-spacing:1px;
     transition:all .3s;
   }
-  .scribble-btn:hover{ background:rgba(201,162,39,.12); }
+  .scribble-btn:hover{ background:rgba(var(--gold-rgb),.15); box-shadow:0 0 18px rgba(var(--gold-rgb),.25); }
   .scribble-confirm{
     margin-top:14px;
     font-size:13px;
@@ -660,6 +737,7 @@
 
   /* ── 1. أني أتعفن رعباً ── horror style */
   .clip-horror{
+    border-radius:10px;
     background:#0d0809;
     padding:32px 22px 28px;
     border:1px solid rgba(160,20,30,.5);
@@ -699,16 +777,18 @@
 
   /* ── 2. رواية 005 ── secret file style */
   .clip-file{
-    background:#e8e0ca;
+    border-radius:10px;
+    background:#f1e3e6;
     padding:28px 22px 24px;
     position:relative;
+    overflow:hidden;
   }
   .clip-file::before{
     content:"سري للغاية";
     position:absolute; top:12px; left:12px;
     font-family:'Tajawal',sans-serif; font-size:10px;
-    letter-spacing:2px; color:rgba(140,30,30,.5);
-    border:1px solid rgba(140,30,30,.4);
+    letter-spacing:2px; color:rgba(140,30,55,.5);
+    border:1px solid rgba(140,30,55,.4);
     padding:2px 7px; transform:rotate(-8deg);
   }
   .clip-file::after{
@@ -716,13 +796,13 @@
     position:absolute; top:0; left:0; right:0; bottom:0;
     background:repeating-linear-gradient(
       0deg, transparent, transparent 23px,
-      rgba(58,42,28,.12) 23px, rgba(58,42,28,.12) 24px
+      rgba(var(--paper-ink-rgb),.12) 23px, rgba(var(--paper-ink-rgb),.12) 24px
     );
     pointer-events:none;
   }
   .file-ref{
     font-family:'Tajawal',sans-serif; font-size:10px;
-    letter-spacing:2px; color:rgba(58,42,28,.45);
+    letter-spacing:2px; color:rgba(var(--paper-ink-rgb),.45);
     margin:0 0 16px 0; direction:ltr; text-align:left;
   }
   .file-text{
@@ -732,20 +812,21 @@
   .file-stamp{
     margin-top:16px; text-align:left; direction:ltr;
     font-family:'Tajawal',sans-serif; font-size:10px;
-    color:rgba(140,30,30,.6); letter-spacing:1px; position:relative; z-index:1;
+    color:rgba(140,30,55,.6); letter-spacing:1px; position:relative; z-index:1;
   }
 
   /* ── 3. ستوكهولم ── handwritten letter style */
   .clip-letter{
-    background:#f7f0e0;
+    border-radius:10px;
+    background:#fbeaef;
     padding:34px 26px 28px;
     position:relative;
-    box-shadow:inset 0 0 40px rgba(140,90,30,.08);
+    box-shadow:inset 0 0 40px rgba(var(--gold-rgb),.1);
   }
   .clip-letter::before{
     content:"";
     position:absolute; top:18px; left:18px; right:18px; bottom:18px;
-    border:1px solid rgba(140,90,30,.18);
+    border:1px solid rgba(var(--gold-rgb),.22);
     pointer-events:none;
   }
   .letter-dear{
@@ -788,15 +869,17 @@
     gap:14px;
   }
   .love-item{
-    border:1px solid rgba(201,162,39,.35);
-    background:rgba(255,255,255,.03);
+    border:1px solid rgba(var(--gold-rgb),.35);
+    border-radius:16px;
+    background:rgba(var(--gold-rgb),.04);
     padding:16px 18px;
     text-align:right;
     transition:background .3s, border-color .3s;
   }
   .love-item.open{
-    background:rgba(201,162,39,.08);
+    background:rgba(var(--gold-rgb),.1);
     border-color:var(--gold);
+    box-shadow:0 0 22px rgba(var(--gold-rgb),.15);
   }
   .love-trigger{
     width:100%;
@@ -828,7 +911,7 @@
     font-style:italic;
     font-size:14.5px;
     line-height:1.95;
-    color:rgba(243,233,218,.85);
+    color:rgba(var(--ivory-rgb),.85);
     margin-top:0;
   }
   .love-item.open .love-reveal{
@@ -843,12 +926,13 @@
     max-width:300px;
     margin:0 auto;
     padding:38px 24px 32px;
-    border-radius:4px;
+    border-radius:20px;
     overflow:hidden;
     background:
-      radial-gradient(circle at 75% 18%, rgba(230,225,200,.18), transparent 45%),
-      linear-gradient(160deg, #0a0a18, #161028 55%, #1c1430);
-    border:1px solid rgba(201,162,39,.35);
+      radial-gradient(circle at 75% 18%, rgba(var(--rose-rgb),.18), transparent 45%),
+      linear-gradient(160deg, #150a17, #261228 55%, #321a33);
+    border:1px solid rgba(var(--gold-rgb),.35);
+    box-shadow:0 0 40px rgba(var(--gold-rgb),.1);
     transition:background 2.4s ease;
     min-height:230px;
     display:flex;
@@ -858,8 +942,8 @@
   }
   .kdrama-scene.sunrise{
     background:
-      radial-gradient(circle at 75% 25%, rgba(255,210,140,.85), transparent 55%),
-      linear-gradient(160deg, #6b2d3a, #b9612f 55%, #e8a755);
+      radial-gradient(circle at 75% 25%, rgba(250,200,212,.9), transparent 55%),
+      linear-gradient(160deg, #6d2142, #c9789f 55%, #f6cfdc);
   }
   .kdrama-stars{
     position:absolute; inset:0;
@@ -878,7 +962,7 @@
     font-family:'Aref Ruqaa', serif;
     font-size:14px;
     letter-spacing:1px;
-    color:rgba(243,233,218,.55);
+    color:rgba(var(--ivory-rgb),.55);
     margin:0 0 18px 0;
     position:relative; z-index:1;
   }
@@ -888,7 +972,7 @@
     border:none;
     cursor:pointer;
     line-height:1;
-    filter:drop-shadow(0 0 14px rgba(243,233,218,.5));
+    filter:drop-shadow(0 0 14px rgba(var(--ivory-rgb),.5));
     transition:transform .6s ease, opacity .6s ease;
     position:relative; z-index:1;
   }
@@ -899,7 +983,7 @@
   }
   .kdrama-hint{
     font-size:11px;
-    color:rgba(243,233,218,.4);
+    color:rgba(var(--ivory-rgb),.4);
     margin:10px 0 0 0;
     letter-spacing:.5px;
     position:relative; z-index:1;
@@ -942,7 +1026,7 @@
   .jar-emoji{
     font-size:74px;
     display:inline-block;
-    filter:drop-shadow(0 8px 18px rgba(201,162,39,.25));
+    filter:drop-shadow(0 8px 18px rgba(var(--gold-rgb),.25));
     transition:transform .35s ease;
   }
   .jar-jar.opening .jar-emoji{
@@ -962,7 +1046,7 @@
   }
   .jar-hint{
     font-size:12.5px;
-    color:rgba(243,233,218,.55);
+    color:rgba(var(--ivory-rgb),.55);
     margin:16px 0 0 0;
     letter-spacing:.3px;
     line-height:1.8;
@@ -1005,7 +1089,7 @@
   }
   .song-from{
     font-size:12px;
-    color:rgba(243,233,218,.55);
+    color:rgba(var(--ivory-rgb),.55);
     letter-spacing:1px;
     margin:0 0 22px 0;
   }
@@ -1014,7 +1098,7 @@
     font-style:italic;
     font-size:14px;
     line-height:1.9;
-    color:rgba(243,233,218,.8);
+    color:rgba(var(--ivory-rgb),.8);
     max-width:420px;
   }
 
@@ -1037,23 +1121,23 @@
     line-height:1;
     min-width:52px;
     text-align:center;
-    text-shadow:0 0 20px rgba(201,162,39,.4);
+    text-shadow:0 0 20px rgba(var(--gold-rgb),.4);
   }
   .digit-label{
     font-family:'Tajawal',sans-serif;
     font-size:10px; letter-spacing:1.5px;
-    color:rgba(243,233,218,.45);
+    color:rgba(var(--ivory-rgb),.45);
   }
   .digit-sep{
     font-family:'Aref Ruqaa',serif;
     font-size:38px;
-    color:rgba(201,162,39,.5);
+    color:rgba(var(--gold-rgb),.5);
     align-self:flex-start;
     padding-top:4px; line-height:1.2;
   }
   .countdown-hint{
     font-family:'Amiri',serif; font-style:italic;
-    font-size:13px; color:rgba(243,233,218,.55);
+    font-size:13px; color:rgba(var(--ivory-rgb),.55);
     margin-top:6px; line-height:1.9;
   }
 
@@ -1067,22 +1151,22 @@
   .mood-btn{
     font-family:'Tajawal',sans-serif; font-size:14px;
     padding:12px 22px;
-    border:1px solid rgba(201,162,39,.4);
+    border:1px solid rgba(var(--gold-rgb),.4);
     background:transparent; color:var(--ivory);
-    cursor:pointer; border-radius:2px;
+    cursor:pointer; border-radius:24px;
     transition:all .3s; letter-spacing:.5px;
   }
-  .mood-btn:hover{ background:rgba(201,162,39,.1); border-color:var(--gold); }
+  .mood-btn:hover{ background:rgba(var(--gold-rgb),.12); border-color:var(--gold); }
   .mood-btn.chosen{
-    background:rgba(201,162,39,.2);
+    background:rgba(var(--gold-rgb),.22);
     border-color:var(--gold-soft); color:var(--gold-soft);
-    box-shadow:0 0 16px rgba(201,162,39,.2);
+    box-shadow:0 0 18px rgba(var(--gold-rgb),.25);
   }
   .mood-response{
     margin-top:22px;
     font-family:'Amiri',serif; font-style:italic;
     font-size:14px; line-height:2;
-    color:rgba(243,233,218,.85); min-height:44px;
+    color:rgba(var(--ivory-rgb),.85); min-height:44px;
     opacity:0; transition:opacity .7s;
   }
   .mood-response.show{ opacity:1; }
@@ -1094,16 +1178,16 @@
     color:var(--ivory); margin:0 0 6px 0;
   }
   .canvas-sub{
-    font-size:12px; color:rgba(243,233,218,.45);
+    font-size:12px; color:rgba(var(--ivory-rgb),.45);
     margin:0 0 16px 0; letter-spacing:.5px;
     font-family:'Tajawal',sans-serif;
   }
   #starCanvas{
     width:100%; height:220px;
-    background:rgba(0,0,0,.6);
-    border:1px solid rgba(201,162,39,.3);
+    background:rgba(var(--ink-rgb),.6);
+    border:1px solid rgba(var(--gold-rgb),.3);
     cursor:crosshair; display:block;
-    touch-action:none; border-radius:2px;
+    touch-action:none; border-radius:16px;
   }
   .canvas-actions{
     margin-top:12px; display:flex;
@@ -1111,18 +1195,20 @@
   }
   .canvas-clear{
     font-family:'Tajawal',sans-serif; font-size:12px;
-    color:rgba(243,233,218,.4); background:transparent;
-    border:1px solid rgba(243,233,218,.2);
+    color:rgba(var(--ivory-rgb),.4); background:transparent;
+    border:1px solid rgba(var(--ivory-rgb),.2);
+    border-radius:20px;
     padding:8px 16px; cursor:pointer; transition:all .3s; letter-spacing:.5px;
   }
-  .canvas-clear:hover{ color:var(--ivory); border-color:rgba(243,233,218,.5); }
+  .canvas-clear:hover{ color:var(--ivory); border-color:rgba(var(--ivory-rgb),.5); }
   .canvas-submit{
     font-family:'Tajawal',sans-serif; font-size:12px;
     color:var(--gold-soft); background:transparent;
     border:1px solid var(--gold);
+    border-radius:20px;
     padding:8px 20px; cursor:pointer; transition:all .3s; letter-spacing:.5px;
   }
-  .canvas-submit:hover{ background:rgba(201,162,39,.12); }
+  .canvas-submit:hover{ background:rgba(var(--gold-rgb),.15); }
   .canvas-confirm{
     margin-top:12px;
     font-family:'Amiri',serif; font-style:italic; font-size:13px;
@@ -1145,7 +1231,7 @@
 <section class="screen active" id="screen-intro">
   <div class="glow"></div>
   <div class="content">
-    <p class="eyebrow">حلقة خاصّة، بدون مناسبة</p>
+    <p class="eyebrow">🌸 حلقة خاصّة، بدون مناسبة 🌸</p>
     <h1 class="title-xl">قصة لينا</h1>
     <p class="subtitle">الفصل الذي لم تتوقعيه</p>
     <p class="tagline">في كل رواية بطلة، وفي كل دراما نهاية سعيدة...<br>وهذه نهايتكِ أنتِ.</p>
@@ -1214,6 +1300,23 @@
     </div>
   </div>
 
+  <!-- TODAY COMFORT CARD -->
+  <div class="s-block">
+    <div class="reveal today-card" id="todayCard">
+      <p class="today-icon">🤍</p>
+      <p class="today-title">بخصوص اليوم...</p>
+      <p class="today-text">
+        أعرف أنك كنتِ ناوية تمشي للجيم اليوم وما قدرتيش بسبب الظروف، وهذا ولا يهم أبدًا.
+        جسمك ما عندوش عجلة، والجيم رايح يبقى يستقبلك بكرة وبعد بكرة.
+       اليوم خذي قسط من الراحة، وكوني سعيدة بنفسك بقدر ما تكونين قوية معها. حملغكم العمرينو دايلي💕❤️
+      </p>
+      <button class="today-btn" onclick="todayBoost(this)">🤗 كبسة معنوية</button>
+      <p class="today-extra" id="todayExtra">
+        iS TRIT AD TGT TAMGHART INO؟
+      </p>
+    </div>
+  </div>
+
   <div class="s-block">
     <div class="clip-wrap reveal" style="transform:rotate(-2deg)">
       <div class="tape"></div>
@@ -1228,7 +1331,12 @@
   <div class="s-block">
     <div class="reveal">
       <span class="lesson-tag">الدرس رقم ١</span>
-      <p class="para" style="margin-top:14px;">أأعلم ذلك، ولكن أحياناً الأفلام والروايات تمثل شريحة من الواقع!</p>
+      <p class="para" style="margin-top:14px;">!ايا لوكان اوفيغ ار دخل.. ووليو تليذ
+        حد اور تتواليظ ام اكني افغيغ نك زريغ تزريظ ار دخليو ارغيغ
+        اساعفيي اعلا كميني اسعييغ 
+        تسنظيي
+        تزريظ اماك ا قيغ
+      </p>
     </div>
   </div>
 
@@ -1296,9 +1404,9 @@
       <div class="page-clip">
         <p class="clip-chapter">نهاية الفصل</p>
         <p class="credits-clip">
-          البطلة: لينا<br>
-          النوع: صداقة لا تنتهي<br>
-          الحالة: مستمرّة...
+          الابطل: رياض و لينا<br>
+          النوع: تاسا دايلي<br>
+          الحالة: غير منتهية...
         </p>
       </div>
     </div>
@@ -1370,7 +1478,7 @@
 
   <!-- ══ NOVELS SECTION ══ -->
   <div class="s-block">
-    <p class="novels-eyebrow reveal">رواياتها المفضّلة</p>
+    <p class="novels-eyebrow reveal">🌷 رواياتها المفضّلة 🌷</p>
   </div>
 
   <!-- رواية 1: أني أتعفن رعباً -->
@@ -1391,7 +1499,7 @@
   <!-- رواية 2: 005 -->
   <div class="s-block">
     <div class="novel-clip-wrap reveal" style="transform:rotate(2deg)">
-      <div class="novel-tape" style="left:30%; background:rgba(58,42,28,.4); transform:rotate(3deg);"></div>
+      <div class="novel-tape" style="left:30%; background:rgba(var(--paper-ink-rgb),.4); transform:rotate(3deg);"></div>
       <div class="clip-file">
         <p class="file-ref">FILE // 005 — CLASSIFIED</p>
         <p class="file-text">
@@ -1406,7 +1514,7 @@
   <!-- رواية 3: ستوكهولم -->
   <div class="s-block">
     <div class="novel-clip-wrap reveal" style="transform:rotate(-1deg)">
-      <div class="novel-tape" style="right:38%; background:rgba(180,140,60,.4); transform:rotate(-5deg);"></div>
+      <div class="novel-tape" style="right:38%; background:rgba(214,143,174,.5); transform:rotate(-5deg);"></div>
       <div class="clip-letter">
         <p class="letter-dear">إلى من تقرأ ستوكهولم...</p>
         <p class="letter-text">
@@ -1476,14 +1584,21 @@
 <script>
   // ambient particles
   const pContainer = document.getElementById('particles');
+  const floralGlyphs = ['🌸','🌷'];
   for(let i=0;i<26;i++){
-    const p = document.createElement('div');
-    p.className = 'particle';
+    const useFlower = Math.random() < 0.22;
+    const p = document.createElement(useFlower ? 'span' : 'div');
+    p.className = 'particle' + (useFlower ? ' particle-flower' : '');
     p.style.left = Math.random()*100+'vw';
     p.style.setProperty('--drift', (Math.random()*40-20)+'px');
     p.style.animationDuration = (9 + Math.random()*8)+'s';
     p.style.animationDelay = (Math.random()*10)+'s';
-    p.style.width = p.style.height = (3 + Math.random()*4)+'px';
+    if(useFlower){
+      p.textContent = floralGlyphs[Math.floor(Math.random()*floralGlyphs.length)];
+      p.style.fontSize = (12 + Math.random()*6)+'px';
+    } else {
+      p.style.width = p.style.height = (3 + Math.random()*4)+'px';
+    }
     pContainer.appendChild(p);
   }
 
@@ -1628,17 +1743,17 @@
     happy:{
       response:'الفرح يُضيء وجهكِ كما تُضيء النجوم السماء 🌸 واليوم كل هذا الضوء لكِ',
       chapter2:'لأن الفرح الحقيقي لا يُكتب في الروايات... بل يُعاش في لحظات مثل هذه، حين تبتسمين وأشعر أن العالم كله يضحك معكِ.',
-      glow:'rgba(180,70,80,.55)',
+      glow:'rgba(214,110,150,.55)',
     },
     sad:{
       response:'حتى في حزنكِ هناك شيء ساحر 🌙 كالمطر يُنظّف كل شيء ويتركه أجمل مما كان',
       chapter2:'وحتى في أحزانها، كانت تحمل جمالاً لا يُوصف — كالمطر الذي يُنظّف العالم ويتركه أكثر إشراقاً مما كان.',
-      glow:'rgba(50,35,100,.65)',
+      glow:'rgba(90,45,95,.6)',
     },
     longing:{
       response:'الشوق دليل على أن ما بيننا يستحق أن يُشتاق إليه 🌟 وهذا يكفي',
       chapter2:'والشوق؟ الشوق أجمل دليل على أن ما بيننا يستحق أن يُحفظ، يُحكى، ويُعاش مرةً أخرى.',
-      glow:'rgba(140,75,20,.52)',
+      glow:'rgba(180,90,130,.5)',
     }
   };
 
@@ -1653,7 +1768,7 @@
     if(ch2) ch2.textContent = d.chapter2;
     // shift background colour
     document.getElementById('warmBg').style.cssText +=
-      ';background:radial-gradient(ellipse 75% 65% at 50% 40%,'+d.glow+',transparent 70%),radial-gradient(ellipse 60% 55% at 50% 50%,#0e0b12,transparent 80%);transition:background 2s ease';
+      ';background:radial-gradient(ellipse 75% 65% at 50% 40%,'+d.glow+',transparent 70%),radial-gradient(ellipse 60% 55% at 50% 50%,#1b0f17,transparent 80%);transition:background 2s ease';
   }
 
   // ──────── star / light canvas ─────────────────────────
@@ -1767,6 +1882,15 @@
   function toggleLove(btn){
     const item = btn.closest('.love-item');
     item.classList.toggle('open');
+  }
+
+  // ──────── today comfort card ──────────────────────────
+  function todayBoost(btn){
+    const card = document.getElementById('todayCard');
+    const extra = document.getElementById('todayExtra');
+    extra.classList.add('show');
+    card.classList.remove('pulse');
+    requestAnimationFrame(()=>card.classList.add('pulse'));
   }
 
   // ──────── kdrama night → sunrise ─────────────────────
